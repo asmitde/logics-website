@@ -2607,9 +2607,9 @@
 			.image.fixed img {
 				margin: auto;
 			}
-		
+
 		@media screen and (max-width: 736px) {
-			
+
 			.image.fixed {
 				display: block;
 				margin: 0 0 3em 0;
@@ -2846,7 +2846,7 @@
 
 				ul.contact-compact li a {
 					color: inherit;
-				}				
+				}
 
 		ul.actions {
 			cursor: default;
@@ -3498,7 +3498,7 @@
 			.posts article {
 				width: calc(33.33333% - 4em);
 			}
-			
+
 			.posts article:nth-child(3n + 1):before {
 				display: none;
 			}
@@ -3638,7 +3638,7 @@
 		}
 
 			#main > .inner > section {
-				padding: 6em 0 4em 0 ;
+				padding: 4em 0 4em 0 ;
 				border-top: solid 2px rgba(210, 215, 217, 0.75);
 			}
 
@@ -3653,7 +3653,7 @@
 			}
 
 				#main > .inner > section {
-					padding: 5em 0 3em 0 ;
+					padding: 3em 0 3em 0 ;
 				}
 
 		}
@@ -3665,7 +3665,7 @@
 			}
 
 				#main > .inner > section {
-					padding: 4em 0 2em 0 ;
+					padding: 2em 0 2em 0 ;
 				}
 
 		}
@@ -3677,7 +3677,7 @@
 			}
 
 				#main > .inner > section {
-					padding: 3em 0 1em 0 ;
+					padding: 1em 0 1em 0 ;
 				}
 
 		}
@@ -3996,11 +3996,15 @@
 /* Banner */
 
 	#banner {
-		padding: 6em 0 4em 0 ;
+		padding: 2em 0 0 0 ;
 		display: -moz-flex;
 		display: -webkit-flex;
 		display: -ms-flex;
 		display: flex;
+		-moz-flex-direction: row-reverse;
+				-webkit-flex-direction: row-reverse;
+				-ms-flex-direction: row-reverse;
+				flex-direction: row-reverse;
 	}
 
 		#banner h1 {
@@ -4016,7 +4020,28 @@
 			-webkit-flex-shrink: 1;
 			-ms-flex-shrink: 1;
 			flex-shrink: 1;
-			width: 50%;
+			width: 30%;
+		}
+
+		.newsfeed {
+			-webkit-overflow-scrolling: touch;
+			overflow-x: auto;
+			overflow-y: scroll;
+			max-height: 50vh;
+		}
+
+		.newsfeed ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.newsfeed ul li {
+			padding-bottom: 0.5em;
+		}
+
+		.newsfeed ul li:last-child {
+			padding-bottom: 0;
 		}
 
 		#banner .image {
@@ -4029,12 +4054,11 @@
 			-ms-flex-shrink: 0;
 			flex-shrink: 0;
 			display: block;
-			margin: 0 0 2em 4em;
-			width: 50%;
+			margin: auto 4em auto 0;
+			width: 60%;
 		}
 
-			#banner .image img {
-				height: 100%;
+			#banner img {
 				-moz-object-fit: cover;
 				-webkit-object-fit: cover;
 				-ms-object-fit: cover;
@@ -4059,6 +4083,21 @@
 					display: none;
 				}
 
+				#banner .image {
+					-moz-flex-grow: 0;
+					-webkit-flex-grow: 0;
+					-ms-flex-grow: 0;
+					flex-grow: 0;
+					-moz-flex-shrink: 0;
+					-webkit-flex-shrink: 0;
+					-ms-flex-shrink: 0;
+					flex-shrink: 0;
+					margin: 0;
+					padding-bottom: 2em;
+					min-height: 18em;
+					width: 100%;
+				}
+
 				#banner .content {
 					-moz-flex-grow: 0;
 					-webkit-flex-grow: 0;
@@ -4069,22 +4108,14 @@
 					-ms-flex-shrink: 0;
 					flex-shrink: 0;
 					width: 100%;
+					min-height: 18em;
 				}
 
-				#banner .image {
-					-moz-flex-grow: 0;
-					-webkit-flex-grow: 0;
-					-ms-flex-grow: 0;
-					flex-grow: 0;
-					-moz-flex-shrink: 0;
-					-webkit-flex-shrink: 0;
-					-ms-flex-shrink: 0;
-					flex-shrink: 0;
-					margin: 0 0 4em 0;
-					height: 25em;
-					max-height: 50vh;
-					min-height: 18em;
-					width: 100%;
+				.newsfeed {
+					-webkit-overflow-scrolling: touch;
+					overflow-x: auto;
+					overflow-y: scroll;
+					max-height: 30vh;
 				}
 
 		}
@@ -4093,6 +4124,13 @@
 
 			#banner .image {
 				max-height: 35vh;
+			}
+
+			.newsfeed {
+				-webkit-overflow-scrolling: touch;
+				overflow-x: auto;
+				overflow-y: scroll;
+				max-height: 18vh;
 			}
 
 		}
@@ -4259,9 +4297,98 @@ header.majorconst {
 	margin-top: 2em;
 }
 
-.newsfeed {
-	-webkit-overflow-scrolling: touch;
-	overflow-x: auto;
-	overflow-y: scroll;
-	max-height: 60em;
-}
+
+/* Slideshow container */
+.slideshow-container {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	max-width: 1000px;
+	position: relative;
+	margin: auto;
+  }
+
+  /* Hide the images by default */
+  .mySlides {
+	display: none;
+  }
+
+  /* Next & previous buttons */
+  .prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 45%;
+	width: auto;
+	padding: 16px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+	user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover, .next:hover {
+	background-color: rgba(0,0,0,0.8);
+  }
+
+  /* Caption text */
+  .text {
+	color: #f2f2f2;
+	font-size: 15px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
+  }
+
+  /* Number text (1/3 etc) */
+  .numbertext {
+	color: #f2f2f2;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
+  }
+
+  /* The dots/bullets/indicators */
+  .dot {
+	display: block;
+	position: relative;
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	transition: background-color 0.6s ease;
+  }
+
+  .active, .dot:hover {
+	background-color: #717171;
+  }
+
+  /* Fading animation */
+  .fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+  }
+
+  @-webkit-keyframes fade {
+	from {opacity: .4}
+	to {opacity: 1}
+  }
+
+  @keyframes fade {
+	from {opacity: .4}
+	to {opacity: 1}
+  }
